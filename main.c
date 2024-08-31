@@ -5,7 +5,7 @@ void decimalParaBinario(int numero) {
     int binario[32]; 
     int i = 0;
 
-  
+    
     printf("Passo 1 (Base 2): Dividir %d por 2 até o quociente ser 0 e armazenar os restos:\n", numero);
 
     while (numero > 0) {
@@ -38,7 +38,6 @@ void decimalParaOctal(int numero) {
         printf("%d %% 8 = %d (resto)\n", numero, octal[i]);
         numero = numero / 8;
         printf("%d / 8 = %d (novo número)\n", numero * 8 + octal[i], numero); 
-        i++;
     }
 
     
@@ -61,7 +60,7 @@ void decimalParaHexadecimal(int numero) {
     while (numero > 0) {
         int resto = numero % 16;
 
-       
+        
         if (resto < 10) {
             hexadecimal[i] = 48 + resto; 
         } else {
@@ -70,7 +69,7 @@ void decimalParaHexadecimal(int numero) {
 
         printf("%d %% 16 = %c (resto)\n", numero, hexadecimal[i]);
         numero = numero / 16;
-        printf("%d / 16 = %d (novo número)\n", numero * 16 + resto, numero);
+        printf("%d / 16 = %d (novo número)\n", numero * 16 + resto, numero); 
         i++;
     }
 
@@ -100,13 +99,13 @@ void decimalParaBCD(int numero) {
             digito = digito / 2;
         }
 
-      
+       
         for (int i = 0; i < 4; i++) {
             printf("%d", bcd[i]);
         }
         printf(" "); 
 
-        numero = numero / 10;  
+        numero = numero / 10; 
     }
     printf("\n");
 }
