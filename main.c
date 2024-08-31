@@ -50,6 +50,39 @@ void decimalParaOctal(int numero) {
     printf("\n");
 }
 
+
+void decimalParaHexadecimal(int numero) {
+    char hexadecimal[32]; 
+    int i = 0;
+
+    
+    printf("Passo 1 (Base 16): Dividir %d por 16 até o quociente ser 0 e armazenar os restos:\n", numero);
+
+    while (numero > 0) {
+        int resto = numero % 16;
+
+        
+        if (resto < 10) {
+            hexadecimal[i] = 48 + resto; 
+        } else {
+            hexadecimal[i] = 55 + resto; 
+        }
+
+        printf("%d %% 16 = %c (resto)\n", numero, hexadecimal[i]);
+        numero = numero / 16;
+        printf("%d / 16 = %d (novo número)\n", numero * 16 + resto, numero); 
+        i++;
+    }
+
+    
+    printf("Passo 2 (Base 16): Inverter a ordem dos restos:\n");
+    printf("Hexadecimal: ");
+    for (int j = i - 1; j >= 0; j--) {
+        printf("%c", hexadecimal[j]);
+    }
+    printf("\n");
+}
+
 int main() {
     int numero;
 
@@ -58,6 +91,7 @@ int main() {
 
     decimalParaBinario(numero);
     decimalParaOctal(numero);
+    decimalParaHexadecimal(numero);
 
     return 0;
 }
